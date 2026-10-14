@@ -1,0 +1,81 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+*.whl
+*.tar.gz
+# Release archives belong in dist/, never committed to the tree.
+/aileron-anchor-*.zip
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test / tooling caches
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.ruff_cache/
+
+# Editors / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# --- Aileron artifacts ---
+# Chain logs are evidence journals: they can contain recorded tool-call
+# digests (and content, if capture_content was on). Never commit them.
+# Anchors files name Rekor entries and carry checkpoint payloads; keep them
+# with the journal they belong to, not in this repo.
+*.chain.jsonl
+*.chain.jsonl.checkpoints.jsonl
+*.chain.jsonl.anchors.jsonl
+
+# Signing keys. Public keys (*.pub) may be committed if you want them in
+# the repo for verification; private keys must never be.
+*.key
+
+# Scaffolding dropped by AI coding agents, editors, and codegen tools.
+# None of it is part of this project; it appears without being asked for.
+.aidlc/
+aidlc-docs/
+.kiro/
+.cursor/
+.cursorrules
+.windsurf/
+.windsurfrules
+.amazonq/
+.q/
+.continue/
+.aider*
+.roo/
+.cline*
+.codeium/
+.tabnine*
+.sourcegraph/
+.copilot/
+.claude/
+.opencode/
+.goose/
+.devin/
+.factory/
+
+# Editor / tooling local state
+.idea/
+.vscode/
+*.code-workspace

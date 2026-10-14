@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aileron-anchor"
+version = "0.1.0"
+description = "Anchor Aileron checkpoints in Sigstore Rekor so tail truncation becomes detectable"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "Kamal Lohchab", email = "kamal.lohchab@yahoo.com" }]
+keywords = ["ai-agents", "security", "audit", "sigstore", "rekor", "transparency-log", "tamper-evident"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Security",
+    "Topic :: System :: Logging",
+]
+dependencies = [
+    "aileron>=0.1.5",
+    "cryptography",
+]
+
+[project.urls]
+Homepage = "https://github.com/aileron-sh/aileron-anchor"
+Repository = "https://github.com/aileron-sh/aileron-anchor"
+Changelog = "https://github.com/aileron-sh/aileron-anchor/blob/main/CHANGELOG.md"
+Security = "https://github.com/aileron-sh/aileron-anchor/blob/main/SECURITY.md"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+aileron-anchor = "aileron_anchor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
